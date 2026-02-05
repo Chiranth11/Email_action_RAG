@@ -1,0 +1,29 @@
+[project]
+name = "email-action-rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.13.5",
+    "extract-msg>=0.55.0",
+    "faiss-cpu>=1.13.2",
+    "ipykernel>=7.1.0",
+    "langchain>=1.2.6",
+    "langchain-community>=0.4.1",
+    "langchain-google-genai>=4.2.0",
+    "langchain-groq>=1.1.1",
+    "langchain-ollama>=1.0.1",
+    "langchain-openai>=1.1.7",
+    "lxml>=6.0.2",
+    "python-dotenv>=1.2.1",
+    "streamlit>=1.53.0",
+]
+[tool.setuptools]
+packages = [
+  "ingestion",
+  "indexing",
+  "retrieval",
+  "generation",
+  "ranking"
+]

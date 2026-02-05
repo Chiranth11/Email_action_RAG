@@ -1,0 +1,11 @@
+{
+    "id": "string",
+    "subject": "string",
+    "sender": "string",
+    "received_at": "ISO-8601 string",
+    "body": "string",
+    "labels": [
+        "optional",
+        "tags"
+    ]
+}
