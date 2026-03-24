@@ -53,6 +53,8 @@ def format_sticky(actions: List[ActionItem]) -> str:
             line = f"• {act}"
             if a.deadline:
                 line += f" (by {a.deadline})"
+            
+            line += f"\n   ↳ Confidence: {a.confidence_score} | Grounded: {a.grounded}"
             lines.append(line)
 
             # Context line (subject + sender)

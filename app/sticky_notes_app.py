@@ -1,9 +1,14 @@
 import streamlit as st
 import time
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from retrieval.email_retriever import retrieve_relevant_emails
 from generation.action_extractor import extract_actions_from_docs
 from ranking.action_ranker import rank_actions, format_sticky
+from evaluation.action_evaluator import evaluate_actions
 
 st.set_page_config(
     page_title="Email Action Sticky Notes",
@@ -21,8 +26,13 @@ def run_pipeline():
     )
 
     actions = extract_actions_from_docs(docs)
-    ranked_actions = rank_actions(actions)
-
+    evaluated = evaluate_actions(actions, docs)
+    for a in evaluated:
+        print(a.confidence_score, a.grounded)
+    # Optional: filter low confidence
+    filtered = [a for a in evaluated if a.confidence_score >= 30]
+    ranked_actions = rank_actions(filtered)
+    
     return format_sticky(ranked_actions)
 
 # Display Sticky Note Content

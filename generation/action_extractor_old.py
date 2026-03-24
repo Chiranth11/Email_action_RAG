@@ -24,6 +24,7 @@ class ActionItem(BaseModel):
 # 2️ LLM Setup
 # ----------------------------
 llm = Ollama(model="qwen2.5:7b-instruct")
+# llm = Ollama(model = "phi3:mini")
 
 PROMPT = """
 You are an assistant that extracts ACTIONABLE TASKS from emails.

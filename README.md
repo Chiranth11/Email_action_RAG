@@ -172,3 +172,8 @@ Notification system
 Deadline normalization
 
 Multi-language support
+
+Limitations
+1. String-based grounding may fail on paraphrased outputs.
+2. Local LLM introduces slight non-determinism.
+3. Deadline normalization currently rule-based.

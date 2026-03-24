@@ -3,7 +3,7 @@ from collections import defaultdict
 from typing import List, Optional
 
 from pydantic import BaseModel
-from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM
 from langchain_core.documents import Document
 
 from retrieval.email_retriever import retrieve_relevant_emails
@@ -20,11 +20,16 @@ class ActionItem(BaseModel):
     priority: str   # High | Medium | Low
     source_email_id: str
 
+    # New fields
+    grounded: Optional[bool] = None
+    confidence_score: Optional[float] = None
+
 
 # ----------------------------
 # 2️ LLM Setup
 # ----------------------------
-llm = Ollama(model="qwen2.5:7b-instruct")
+llm = OllamaLLM(model="qwen2.5:7b-instruct",  temperature=0)
+# llm = Ollama(model = "phi3:mini")
 
 
 # ----------------------------
