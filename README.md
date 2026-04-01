@@ -1,3 +1,5 @@
+Built as part of a self-directed GenAI learning programme alongside an MBA, this project demonstrates end-to-end RAG pipeline design — from ingestion through retrieval, generation, and evaluation — applied to a real knowledge-worker productivity problem.
+
 Email Action RAG (Sticky Notes)
 1. Project Title
 
